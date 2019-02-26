@@ -7,8 +7,8 @@ function preload() {
 var scene;
 
 function setup() {
-  scene = document.getElementById("main")
+  scene = document.getElementById("main");
   s.on("connect", (d) => {
-    scene.innerHTML += `<a-box position="-5 1 0" color="#FFFFF" id="${d.id}"></a-box>`;
+    scene.innerHTML += `<a-box position="-5 1 0" color="#FFFFF" id="${d}"></a-box>`;
   });
 }
