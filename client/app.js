@@ -1,7 +1,7 @@
 var s;
 
 function preload() {
-  s = io;
+  s = io();
 }
 
 var scene;
