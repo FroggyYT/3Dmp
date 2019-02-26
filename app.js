@@ -9,3 +9,7 @@ app.use("/client", express.static(__dirname + "/client"));
 server.listen(process.env.PORT || 2000);
 
 var io = require("socket.io")(server,{});
+
+io.on("connection", (s) => {
+  io.emit("connect", s);
+});
