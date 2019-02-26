@@ -12,4 +12,8 @@ var io = require("socket.io")(server,{});
 
 io.on("connection", (s) => {
   io.emit("connect", s.id);
+
+  s.on("move", () => {
+    io.emit("move", s.id);
+  });
 });

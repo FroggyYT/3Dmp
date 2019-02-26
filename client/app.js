@@ -16,4 +16,23 @@ function setup() {
     box.setAttribute("id", `${d}`);
     scene.appendChild(box);
   });
+  s.on("move", (d) => {
+    
+  });
+}
+
+var keyDown = false;
+
+setInterval(() => {
+  if (keyDown) {
+    s.emit("move");
+  }
+},1);
+
+function keyPressed() {
+  keyDown = true;
+}
+
+function keyReleased() {
+  keyDown = false;
 }
