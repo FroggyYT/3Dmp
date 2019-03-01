@@ -10,10 +10,25 @@ server.listen(process.env.PORT || 2000);
 
 var io = require("socket.io")(server,{});
 
-io.on("connection", (s) => {
-  io.emit("connect", s.id);
+var SOCKETS = [];
 
-  s.on("move", () => {
-    io.emit("move", s.id);
+io.on("connection", (s) => {
+  SOCKETS.push(s.id);
+
+  s.emit("TransferID", s.id);
+
+  io.emit("updateSockets", SOCKETS);
+
+  s.on("move", (d) => {
+    s.broadcast.emit("move", d);
+  });
+
+  s.on("disconnect", () => {
+    for (var i in SOCKETS) {
+      if (SOCKETS[i] == s.id) {
+        SOCKETS.splice(i, 1);
+        io.emit("updateSockets", SOCKETS);
+      }
+    }
   });
 });
