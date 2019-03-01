@@ -56,8 +56,8 @@ function setup() {
   s.on("move", (d) => {
     document.getElementById(d.id).setAttribute("position", d.pos);
     document.getElementById(d.id + "head").setAttribute("position", {x:d.pos.x, y:d.pos.y + 1.5, z:d.pos.z});
-    document.getElementById(d.id).setAttribute("rotation", {x:0, y:d.rot.y, z:d.rot.z});
-    document.getElementById(d.id + "head").setAttribute("rotation", {x:d.rot.x, y:d.rot.y, z:0});
+    document.getElementById(d.id).setAttribute("rotation", {x:0, y:d.rot.y, z:0});
+    document.getElementById(d.id + "head").setAttribute("rotation", {x:d.rot.x, y:d.rot.y, z:d.rot.z});
   });
 }
 
