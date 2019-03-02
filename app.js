@@ -19,6 +19,10 @@ io.on("connection", (s) => {
 
   io.emit("updateSockets", SOCKETS);
 
+  s.on("touch", () => {
+    io.emit("touch");
+  })
+
   s.on("move", (d) => {
     s.broadcast.emit("move", d);
   });

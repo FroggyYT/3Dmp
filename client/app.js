@@ -18,6 +18,7 @@ function setup() {
 
   if (/*window.mobilecheck()*/true) {
     document.addEventListener("touchstart", () => {
+      s.emit("touch");
       var directions = document.getElementById("camera").components.camera.camera.getWorldDirection().multiplyScalar(0.5);
       var newP = document.getElementById("camera").components.camera.camera.parent.position.add({x:directions.x, y:0, z:directions.z});
       document.getElementById("camera").setAttribute("position", newP);
@@ -25,6 +26,10 @@ function setup() {
   }
 
   playerContainer = document.getElementById("player-container");
+
+  s.on("touch", () => {
+    console.log("touch");
+  });
 
   s.on("TransferID", (d) => {
     myId = d;
