@@ -17,8 +17,8 @@ function setup() {
   noCanvas();
 
   if (window.mobilecheck()) {
-    document.querySelector("canvas").addEventListener("onclick", () => {
-      document.getElementById("camera").components.camera.camera.parent.position.add(document.getElementById("camera").components.camera.camera.getWorldDirection().multiplyScalar(0.05));
+    document.querySelector("canvas").addEventListener("click", () => {
+      document.getElementById("camera").components.camera.camera.parent.position.add(document.getElementById("camera").components.camera.camera.getWorldDirection().multiplyScalar(0.1));
     });
   }
 
