@@ -16,7 +16,7 @@ function preload() {
 function setup() {
   noCanvas();
 
-  if (window.mobilecheck()) {
+  if (/*window.mobilecheck()*/true) {
     document.querySelector("canvas").addEventListener("click", () => {
       document.getElementById("camera").components.camera.camera.parent.position.add(document.getElementById("camera").components.camera.camera.getWorldDirection().multiplyScalar(0.1));
     });
