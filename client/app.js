@@ -10,13 +10,6 @@ function preload() {
 function setup() {
   noCanvas();
 
-  // document.body.addEventListener("onclick" () => {
-  //   var camera = document.getElementById("camera")
-  //   var direction = new THREE.Vector3().copy(camera.getWorldDirection());
-  //   var stepFactor = 0.1;
-  //   camera.position.add(direction.multiplyScalar(stepFactor));
-  // });
-
   playerContainer = document.getElementById("player-container");
 
   s.on("TransferID", (d) => {
