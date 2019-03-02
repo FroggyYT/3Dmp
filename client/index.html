@@ -25,7 +25,7 @@
     <a-scene class="fullscreen" inspector vr-mode-ui screenshot keyboard-shortcuts>
       <a-sky color="#41c7f4"></a-sky>
       <a-entity id="player-container"></a-entity>
-      <a-entity id="camera" camera="fov: 120" universal-controls position="0 1.6 0" rotation>
+      <a-entity id="camera" camera="fov: 120" wasd-controls look-controls touch-controls position="0 1.6 0" rotation>
         <a-cursor></a-cursor>
       </a-entity>
       <a-entity raycaster="objects: .clickable; autoRefresh:true; showLine:true; far:100;" line="color: purple;" cursor></a-entity>
