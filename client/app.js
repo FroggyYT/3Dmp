@@ -17,7 +17,7 @@ function setup() {
   noCanvas();
 
   if (/*window.mobilecheck()*/true) {
-    window.addEventListener("click", () => {
+    document.addEventListener("click", () => {
       var directions = document.getElementById("camera").components.camera.camera.getWorldDirection().multiplyScalar(0.5);
       document.getElementById("camera").components.camera.camera.parent.position.add({x:directions.x, y:0, z:directions.z});
     });
