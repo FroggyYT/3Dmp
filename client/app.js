@@ -17,7 +17,7 @@ function setup() {
   noCanvas();
 
   if (/*window.mobilecheck()*/true) {
-    document.querySelector("canvas").addEventListener("click", () => {
+    document.querySelector("canvas").addEventListener("touchstart", () => {
       document.getElementById("camera").components.camera.camera.parent.position.add(document.getElementById("camera").components.camera.camera.getWorldDirection().multiplyScalar(0.1));
     });
   }
